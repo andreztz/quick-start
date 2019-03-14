@@ -14,15 +14,15 @@ def requirements():
 
 
 package = {
-    "name": "start-my-project",
+    "name": "start-project",
     "version": "0.0.1",
-    "description": "start my project",
+    "description": "start project",
     "long_description": readme(),
     "long_description_content_type": "text/markdown",
-    "keywords": "start my project",
+    "keywords": "start project",
     "author": "André P. Santos",
     "author_email": "andreztz@gmail.com",
-    "url": "http://github.com/andreztz/start-my-project",
+    "url": "http://github.com/andreztz/start-project",
     "license": "MIT",
     "packages": find_packages(),
     "install_requires": requirements(),
