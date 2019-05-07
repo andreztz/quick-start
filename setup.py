@@ -26,6 +26,7 @@ package = {
     "license": "MIT",
     "packages": find_packages(),
     "install_requires": requirements(),
+    "include_package_data": True,
     "entry_points": {"console_scripts": ["pyinit=src.__main__:main"]},
     "classifiers": [
         "Development Status :: 1 - Planning",
