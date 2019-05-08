@@ -1,4 +1,6 @@
+import sys
 import os
+import shutil
 import zipfile
 
 
@@ -17,6 +19,9 @@ def unzip_file(file, extract_to):
 def main():
     unzip_file(sample_zip, current_work_directory)
 
+    if len(sys.argv) > 1:
+        project_name = sys.argv[1]
+        shutil.move('sample', project_name)
 
 if __name__ == "__main__":
     main()
