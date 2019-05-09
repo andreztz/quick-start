@@ -1,14 +1,15 @@
 import sys
-import os
 import shutil
 import zipfile
 
+import click
 
-# Config
-root_dir = os.path.dirname(os.path.abspath(__file__))
-sample_folder = os.path.join(root_dir, "sample")
-sample_zip = os.path.join(root_dir, "sample.zip")
-current_work_directory = os.getcwd()
+from src.config import current_work_directory
+from src.config import sample_zip
+
+
+def wizard():
+    pass
 
 
 def unzip_file(file, extract_to):
@@ -16,12 +17,20 @@ def unzip_file(file, extract_to):
         zip.extractall(extract_to)
 
 
+def rename_project(new_name):
+    shutil.move("sample", new_name)
+
+
 def main():
     unzip_file(sample_zip, current_work_directory)
 
-    if len(sys.argv) > 1:
-        project_name = sys.argv[1]
-        shutil.move('sample', project_name)
+    @click.command()
+    @click.argument("project_name", nargs=1, default="sample")
+    def add(project_name):
+        rename_project(project_name)
+
+    add()
+
 
 if __name__ == "__main__":
     main()
