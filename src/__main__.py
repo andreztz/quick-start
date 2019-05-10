@@ -1,5 +1,4 @@
 import sys
-import shutil
 import zipfile
 
 import click
@@ -17,17 +16,12 @@ def unzip_file(file, extract_to):
         zip.extractall(extract_to)
 
 
-def rename_project(new_name):
-    shutil.move("sample", new_name)
-
-
 def main():
-    unzip_file(sample_zip, current_work_directory)
-
     @click.command()
     @click.argument("project_name", nargs=1, default="sample")
     def add(project_name):
-        rename_project(project_name)
+        path = current_work_directory / project_name
+        unzip_file(sample_zip, path)
 
     add()
 
