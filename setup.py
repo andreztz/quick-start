@@ -80,8 +80,8 @@ package = {
     "license": "MIT",
     "packages": find_packages(),
     "install_requires": required(),
-    "include_package_data": True,
-    "entry_points": {"console_scripts": ["pyinit=src.__main__:main"]},
+    # "include_package_data": True,
+    "entry_points": {"console_scripts": ["pyinit=quickstart.__main__:main"]},
     "python_requires": REQUIRES_PYTHON,
     "classifiers": [
         "Development Status :: 1 - Planning",

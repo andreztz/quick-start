@@ -3,8 +3,8 @@ import zipfile
 
 import click
 
-from src.config import current_work_directory
-from src.config import sample_zip
+from quickstart.config import current_work_directory
+from quickstart.config import sample_zip
 
 
 def wizard():
