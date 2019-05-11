@@ -10,6 +10,4 @@ base_dir = Path(__file__).parent
 project_root = base_dir.parent
 config_ini = project_root / "config.ini"
 current_work_directory = Path.cwd()
-sample_zip = project_root / 'data/sample.zip'
-
-
+sample_zip = project_root.joinpath("data/sample.zip")
