@@ -18,7 +18,7 @@ URL = "http://github.com/andreztz/quick-start"
 EMAIL = "andreztz@gmail.com"
 AUTHOR = "André Pereira dos Santos"
 REQUIRES_PYTHON = ">=3.7.0"
-VERSION = "0.0.dev5"
+VERSION = "0.0.dev6"
 
 
 class PostInstallScriptCommand(install_scripts):
