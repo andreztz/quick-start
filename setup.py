@@ -18,7 +18,7 @@ URL = "http://github.com/andreztz/quick-start"
 EMAIL = "andreztz@gmail.com"
 AUTHOR = "André Pereira dos Santos"
 REQUIRES_PYTHON = ">=3.7.0"
-VERSION = "0.0.dev1"
+VERSION = "0.0.dev4"
 
 
 class PostInstallScriptCommand(install_scripts):
@@ -62,7 +62,7 @@ def readme():
         return f.read()
 
 
-def requirements():
+def required():
     with open("requirements.txt") as f:
         return f.read().splitlines()
 
@@ -79,7 +79,7 @@ package = {
     "url": URL,
     "license": "MIT",
     "packages": find_packages(),
-    "install_requires": requirements(),
+    "install_requires": required(),
     "include_package_data": True,
     "entry_points": {"console_scripts": ["pyinit=src.__main__:main"]},
     "python_requires": REQUIRES_PYTHON,
