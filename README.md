@@ -19,7 +19,7 @@ $ pyinit nome_do_projeto
 ## Configuração para Desenvolvimento
 
 ```sh
-python setup.pt develop
+python setup.py develop
 ```
 
 ## Histórico de lançamentos
