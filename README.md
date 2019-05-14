@@ -24,7 +24,6 @@ python setup.py develop
 
 ## Histórico de lançamentos
 
-* 0.0.1
     * Trabalho em andamento
 
 ## Meta
