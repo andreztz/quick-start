@@ -3,10 +3,11 @@
 
 ## Instalação
 
-Linux & OS X & Windows:
+Linux:
 
 ```sh
- $ python setup.py install
+ $ python setup.py install --user
+ $ ./local/bin/quickstart_installer
 ```
 
 
