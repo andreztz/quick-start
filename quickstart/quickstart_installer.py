@@ -19,14 +19,21 @@ def wizard():
     user_config = user_config / NAME
 
     print("*" * 80)
+
     if not user_data.is_dir():
         user_data.mkdir()
         shutil.copytree("data", user_data / "data")
+        print("Installing data files in {} ".format(Path.home()))
+    else:
+        print("Data files already exist in {}".format(Path.home()))
 
     if not user_config.is_dir():
         user_config.mkdir()
         shutil.copy("config.ini", user_config)
-    print("Installing sources to {} ".format(Path.home()))
+        print('Installing config file in {}'.format(user_config))
+    else:
+        print("Config file already exist in {}".format(user_config))
+
     print("*" * 80)
 
 
