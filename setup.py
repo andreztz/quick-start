@@ -48,6 +48,7 @@ package = {
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
     ],
+    "data_files": [("", ["data/sample.zip"])],
 }
 
 
