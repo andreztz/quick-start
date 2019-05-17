@@ -30,7 +30,7 @@ def wizard():
     if not user_config.is_dir():
         user_config.mkdir()
         shutil.copy("config.ini", user_config)
-        print('Installing config file in {}'.format(user_config))
+        print("Installing config file in {}".format(user_config))
     else:
         print("Config file already exist in {}".format(user_config))
 
