@@ -7,7 +7,7 @@ Linux:
 
 ```sh
  $ python setup.py install --user
- $ ./local/bin/quickstart_installer
+ $ ~/.local/bin/quickstart_installer
 ```
 
 
