@@ -1,5 +1,6 @@
-import sys
 import zipfile
+
+from pathlib import Path
 
 import click
 
@@ -16,14 +17,47 @@ def unzip_file(file, extract_to):
         zip.extractall(extract_to)
 
 
+def create_directory(path):
+    path.mkdir()
+
+
+def create_file(fname):
+    open(fname, mode="a").close()
+
+
+def create_package(path, name):
+    path = Path(path) / name
+    create_directory(path)
+    create_file(path / "__init__.py")
+
+
+def create_gitignore():
+    pass
+
+
+def create_setup():
+    pass
+
+
 def main():
-    @click.command()
-    @click.argument("project_name", nargs=1, default="sample")
-    def add(project_name):
-        path = current_work_directory / project_name
+    @click.group()
+    def create():
+        pass
+
+    @create.command()
+    @click.argument("path")
+    @click.argument("name")
+    def package(path, name):
+        create_package(path, name)
+
+    @create.command()
+    @click.argument("name", nargs=1, default="sample")
+    def project(name):
+        path = current_work_directory / name
         unzip_file(sample_zip, path)
 
-    add()
+    cli = click.CommandCollection(sources=[create])
+    cli()
 
 
 if __name__ == "__main__":
