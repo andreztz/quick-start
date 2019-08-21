@@ -1,8 +1,8 @@
 import zipfile
 
-from pathlib import Path
-
 import click
+
+from pathlib import Path
 
 from quickstart.config import current_work_directory
 from quickstart.config import sample_zip
@@ -26,7 +26,7 @@ def create_file(fname):
 
 
 def create_package(path, name):
-    path = Path(path) / name
+    path = path / name
     create_directory(path)
     create_file(path / "__init__.py")
 
@@ -45,9 +45,10 @@ def main():
         pass
 
     @create.command()
-    @click.argument("path")
     @click.argument("name")
-    def package(path, name):
+    @click.option("-path", "--path", "path", default=current_work_directory)
+    def package(name, path):
+        path = Path(path)
         create_package(path, name)
 
     @create.command()
